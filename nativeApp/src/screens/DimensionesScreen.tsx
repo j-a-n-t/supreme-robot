@@ -10,7 +10,7 @@ const DimensionesScreen = () => {
   return (
     <>
       <View style={style.container}>
-        <View style={style.cajaMorada}></View>
+        <View style={{ ...style.cajaMorada, width: width * 0.5 }}></View>
         <View style={style.cajaNaranja}></View>
       </View>
       <Text style={style.title}> W: {width} H: {height} </Text>
