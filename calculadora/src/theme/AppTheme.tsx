@@ -14,6 +14,7 @@ const className = StyleSheet.create({
         color: "white",
         fontSize: 60,
         textAlign: "right",
+        marginBottom:15
     },
     resultadoPequeno: {
         color: "rgba(255,255,255,0.4)",
@@ -23,14 +24,15 @@ const className = StyleSheet.create({
     fila: {
         flexDirection: "row",
         justifyContent: "center",
-        marginBottom:18
+        marginBottom: 18,
+        paddingHorizontal: 10
     },
     boton: {
         height: 80,
         width: 80,
-        backgroundColor: "#9B9B9B",
         borderRadius: 100,
-        justifyContent: "center"
+        justifyContent: "center",
+        marginHorizontal: 10
     },
     botonText: {
         fontSize: 30,
