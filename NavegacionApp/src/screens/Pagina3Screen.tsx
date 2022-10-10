@@ -1,5 +1,6 @@
 import {Button, Text, View} from "react-native";
 import {StackScreenProps} from "@react-navigation/stack";
+import appStyle from "../theme/AppStyle";
 
 interface Props extends StackScreenProps<any, any> {
 };
@@ -12,7 +13,7 @@ interface Props extends StackScreenProps<any, any> {
 const Pagina3Screen = ({navigation}: Props) => {
     return (
         <View>
-            <Text>Pagina 3</Text>
+            <Text style={appStyle.title}> Página3Screen </Text>
             <Button
                 title={"Regresar Pagina dos"}
                 onPress={() => navigation.pop()}/>
