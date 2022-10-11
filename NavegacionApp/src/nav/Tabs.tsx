@@ -1,11 +1,13 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {Platform, Text} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import TabUnoScreen from '../screens/TabUnoScreen';
 import TabDosScreen from '../screens/TabDosScreen';
 import StackNavigator from './StackNavigator';
 import {colors} from '../theme/AppStyle';
+import TopTabNavigator from './TopTabNavigator';
 
 const BottonTabIOS = createBottomTabNavigator();
 const BottonTabAndroid = createMaterialBottomTabNavigator();
@@ -15,7 +17,6 @@ const Tabs = () => {
         ? <TabsIOS/>
         : <TabsAndroid/>;
 };
-
 
 const TabsIOS = () => {
     return (
@@ -64,28 +65,33 @@ const TabsAndroid = () => {
             sceneAnimationEnabled={true}
             screenOptions={({route}) => ({
                 tabBarIcon: ({color, focused}) => {
-
                     let iconName: string = '';
                     switch (route.name) {
                         case 'TabUnoScreen':
-                            iconName = 'T1';
+                            iconName = 'brush-outline';
                             break;
                         case 'TabDosScreen':
-                            iconName = 'T2';
+                            iconName = 'color-palette-outline';
                             break;
                         case 'TabTresScreen':
-                            iconName = 'T3';
+                            iconName = 'create-outline';
                             break;
                         default:
-                            iconName = 'T0';
+                            iconName = 'code-slash-outline';
                             break;
                     }
-                    return <Text style={{color: color}}>{iconName}</Text>;
+                    return <Text
+                        style={{color: color}}>
+                        <Icon
+                            name={iconName}
+                            size={25}
+                            color={colors.secondary}/>
+                    </Text>;
                 },
             })}
         >
             <BottonTabIOS.Screen name="TabUnoScreen" options={{title: 'Tab1'}} component={TabUnoScreen}/>
-            <BottonTabAndroid.Screen name="TabDosScreen" options={{title: 'Tab2'}} component={TabDosScreen}/>
+            <BottonTabAndroid.Screen name="TabDosScreen" options={{title: 'Tab2'}} component={TopTabNavigator}/>
             <BottonTabAndroid.Screen name="TabTresScreen" options={{title: 'Stack'}} component={StackNavigator}/>
         </BottonTabAndroid.Navigator>
     );

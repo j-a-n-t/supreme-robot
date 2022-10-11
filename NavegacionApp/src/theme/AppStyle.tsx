@@ -33,11 +33,14 @@ const appStyle = StyleSheet.create({
         borderRadius: 100,
     },
     menuContainer: {
-        marginVertical: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignContent:"center",
+        marginVertical: 30,
         marginHorizontal: 20,
     },
     menubotton: {
-        marginVertical: 10,
+        marginHorizontal: 10,
     },
     menuItem: {
         color: 'black',
@@ -45,9 +48,10 @@ const appStyle = StyleSheet.create({
     },
 });
 
-
 const colors = {
     primary: 'black',
+    secondary: 'white',
+    bodyColor: 'white',
     colorTab: '#284a7e',
 };
 
