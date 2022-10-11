@@ -1,5 +1,5 @@
 import {Button, Text, View} from "react-native";
-import appStyle from "../theme/AppStyle";
+import {appStyle} from "../theme/AppStyle";
 // import {useNavigation} from "@react-navigation/native";
 import {StackScreenProps} from "@react-navigation/stack";
 
@@ -14,7 +14,7 @@ interface Props extends StackScreenProps<any, any> {
 * navigation.navigate("Pagina1Screen")
 * */
 const Pagina2Screen = ({navigation}: Props) => {
-    
+
     return (
         <View style={appStyle.globalMargin}>
             <Text style={appStyle.title}> Página2Screen </Text>

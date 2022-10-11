@@ -1,10 +1,15 @@
-import {NavigationContainer} from "@react-navigation/native";
-import StackNavigator from "./src/nav/StackNavigator";
+import {NavigationContainer} from '@react-navigation/native';
+import MenuLateral from './src/nav/MenuLateral';
+
+// import StackNavigator from "./src/nav/StackNavigator";
+// import MenuLateralBasico from "./src/nav/MenuLateralBasico";
 
 const App = () => {
     return (
         <NavigationContainer>
-            <StackNavigator/>
+            {/*<StackNavigator/>*/}
+            {/*<MenuLateralBasico/>*/}
+            <MenuLateral/>
         </NavigationContainer>
     );
 };

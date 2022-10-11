@@ -1,6 +1,6 @@
 import {Button, Text, TouchableOpacity, View} from "react-native";
 import {StackScreenProps} from "@react-navigation/stack";
-import appStyle from "../theme/AppStyle";
+import {appStyle} from "../theme/AppStyle";
 
 interface Props extends StackScreenProps<any, any> {
 };
