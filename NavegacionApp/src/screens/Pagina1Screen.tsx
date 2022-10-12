@@ -36,11 +36,8 @@ const Pagina1Screen = ({navigation}: Props) => {
                     <Text style={{...appStyle.botonGrandeTexto}}>Mujer</Text>
                 </TouchableOpacity>
             </View>
-
-
         </View>
     );
-
 };
 
 export default Pagina1Screen;

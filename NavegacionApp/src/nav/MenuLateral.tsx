@@ -16,7 +16,7 @@ const MenuLateral = () => {
 
     return (
         <Drawer.Navigator
-            screenOptions={{drawerPosition: 'right', drawerType: (width > 768) ? 'permanent' : 'front'}}
+            screenOptions={{drawerPosition: 'left', drawerType: (width > 768) ? 'permanent' : 'front'}}
             drawerContent={(props: DrawerContentComponentProps) => <MenuInterno {...props}/>}
         >
             <Drawer.Screen name={'Tabs'} component={Tabs}/>
