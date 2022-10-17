@@ -1,4 +1,4 @@
-import {FlatList, Text, View} from "react-native";
+import {FlatList, ScrollView, Text, View} from "react-native";
 import currencyFormatter from "currency-formatter"
 
 import {MovieFull} from "../interfaces/movie";
@@ -13,7 +13,7 @@ interface Props {
 
 const MovieDetails = ({movieFull, cast}: Props) => {
     return (
-        <>
+        <ScrollView>
             <View style={{marginHorizontal: 20}}>
                 {/*Detalles*/}
                 <View style={{flexDirection: "row"}}>
@@ -52,10 +52,8 @@ const MovieDetails = ({movieFull, cast}: Props) => {
                         renderItem={({item}) => <ActorItem actor={item}/>}>
                     </FlatList>
                 </View>
-
             </View>
-        </>)
-        ;
+        </ScrollView>)
 };
 
 export {MovieDetails};
