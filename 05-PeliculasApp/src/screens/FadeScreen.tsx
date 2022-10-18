@@ -27,7 +27,7 @@ const FadeScreen = () => {
             />
             <Button
                 title={'FadeOut'}
-                onPress={() => fadeOut()}
+                onPress={() => fadeOut(300)}
             />
 
         </View>

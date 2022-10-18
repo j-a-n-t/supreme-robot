@@ -20,7 +20,7 @@ const GradiantBackground = ({children}: Props) => {
     useEffect(() => {
         fadeIn(() => {
             setPrevMainColors({primary, secondary});
-            fadeOut();
+            fadeOut(0);
         });
     }, [primary, secondary]);
 
