@@ -16,8 +16,12 @@ import { useForm } from "../hooks/useForm";
 
 const InputTextScreen = () => {
 
-  const { form, onChange } = useForm({ nombre: "", email: "", telefono: "", isSubscribed: false });
-  const { nombre, email, telefono, isSubscribed } = form;
+  const { form, onChange, nombre, telefono, email, isSubscribed } = useForm({
+    nombre: "",
+    email: "",
+    telefono: "",
+    isSubscribed: false,
+  });
 
   return (
     <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}>
