@@ -7,7 +7,9 @@ export type RootStackParams = {
   home: undefined,
   animation101: undefined,
   animation102: undefined
-  switch: undefined
+  switch: undefined,
+  alert: undefined,
+  inputText: undefined
 }
 
 const StackNav = createStackNavigator<RootStackParams>();
@@ -23,6 +25,8 @@ const StackNavigation = () => {
       <StackNav.Screen name={"animation101"} component={indexScreen.animation101} />
       <StackNav.Screen name={"animation102"} component={indexScreen.animation102} />
       <StackNav.Screen name={"switch"} component={indexScreen.switch} />
+      <StackNav.Screen name={"alert"} component={indexScreen.alerts} />
+      <StackNav.Screen name={"inputText"} component={indexScreen.inputText} />
     </StackNav.Navigator>
   );
 };
