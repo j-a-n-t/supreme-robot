@@ -1,13 +1,13 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { HomeScreen } from "../screen/HomeScreen";
-import { AnimationScreen101 } from "../screen/AnimationScreen101";
-import { AnimationScreen102 } from "../screen/AnimationScreen102";
+import indexScreen from "../screen/indexScreen";
 
 
 export type RootStackParams = {
-  HomeScreen: undefined,
-  AnimationScreen101: undefined,
-  AnimationScreen102: undefined
+  home: undefined,
+  animation101: undefined,
+  animation102: undefined
+  switch: undefined
 }
 
 const StackNav = createStackNavigator<RootStackParams>();
@@ -19,9 +19,10 @@ const StackNavigation = () => {
       cardStyle: { backgroundColor: "white" },
       headerShown: false,
     }}>
-      <StackNav.Screen name={"HomeScreen"} component={HomeScreen} />
-      <StackNav.Screen name={"AnimationScreen101"} component={AnimationScreen101} />
-      <StackNav.Screen name={"AnimationScreen102"} component={AnimationScreen102} />
+      <StackNav.Screen name={"home"} component={indexScreen.home} />
+      <StackNav.Screen name={"animation101"} component={indexScreen.animation101} />
+      <StackNav.Screen name={"animation102"} component={indexScreen.animation102} />
+      <StackNav.Screen name={"switch"} component={indexScreen.switch} />
     </StackNav.Navigator>
   );
 };

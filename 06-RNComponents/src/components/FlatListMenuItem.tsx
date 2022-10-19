@@ -16,10 +16,10 @@ const ListMenuItem = ({ menuItem: { title, icon, component } }: ListMenu) => {
 
       <View style={className.itemTextContainer}>
         <Text style={className.itemText}>{title}</Text>
-        {icon && <Icon name={icon} size={25} color={"#1a3c5b"} style={{ marginHorizontal: 5 }} />}
+        {icon && <Icon name={icon} size={25} color={"#5856D6"} style={{ marginHorizontal: 5 }} />}
       </View>
 
-      <Icon name={"chevron-forward"} size={25} color={"#1a3c5b"} style={{ marginHorizontal: 5 }} />
+      <Icon name={"chevron-forward"} size={25} color={"#5856D6"} style={{ marginHorizontal: 5 }} />
 
     </TouchableOpacity>
   );
