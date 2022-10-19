@@ -11,7 +11,7 @@ const useForm = <T extends Object>(initialState: T) => {
 
   const [state, setState] = useState<T>(initialState);
 
-  const onChange = (value: string | boolean, field: keyof T) => setState({ ...state, [field]: value });
+  const onChange = <K extends Object>(value: K, field: keyof T) => setState({ ...state, [field]: value });
 
   return {
     form: state,
