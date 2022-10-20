@@ -10,16 +10,16 @@ import {
   Keyboard,
   Switch,
 } from "react-native";
-import { HeaderTitle } from "../components/HeaderTitle";
 import { useState } from "react";
 import { useForm } from "../hooks/useForm";
+import { HeaderTitle } from "../components/HeaderTitle";
 
 const InputTextScreen = () => {
 
   const { form, onChange, nombre, telefono, email, isSubscribed } = useForm({
     nombre: "",
-    email: "",
     telefono: "",
+    email: "",
     isSubscribed: false,
   });
 
@@ -69,7 +69,7 @@ const InputTextScreen = () => {
               <Switch
                 trackColor={{ false: "#D9D9DB", true: "#7070de" }}
                 thumbColor={(Platform.OS === "android") ? "#5856D6" : " "}
-                onValueChange={() => onChange(!isSubscribed, "isSubscribed")}
+                onValueChange={ () => onChange(!isSubscribed, "isSubscribed")}
                 value={isSubscribed}
               />
             </View>

@@ -5,13 +5,10 @@ import Icon from "react-native-vector-icons/Ionicons";
 import menuItems from "../data/menuItem";
 import { ListMenuItem } from "../components/FlatListMenuItem";
 import { HeaderTitle } from "../components/HeaderTitle";
+import { ItemSeparator } from "../components/ItemSeparator";
 
 const HomeScreen = () => {
   const { top } = useSafeAreaInsets();
-
-  const itemSeparetor = () => {
-    return (<View style={{ borderBottomWidth: 1, borderBottomColor: "#818181", opacity: 0.4 }} />);
-  };
 
   return (
     <View style={{ flex: 1 }}>
@@ -19,7 +16,7 @@ const HomeScreen = () => {
         data={menuItems}
         keyExtractor={item => item.id.toString()}
         ListHeaderComponent={<HeaderTitle title={"Opciones del Menú"} />}
-        ItemSeparatorComponent={itemSeparetor}
+        ItemSeparatorComponent={() => <ItemSeparator />}
         renderItem={({ item }) => <ListMenuItem menuItem={item} />}
       />
     </View>

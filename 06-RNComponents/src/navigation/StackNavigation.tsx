@@ -9,7 +9,11 @@ export type RootStackParams = {
   animation102: undefined
   switch: undefined,
   alert: undefined,
-  inputText: undefined
+  inputText: undefined,
+  pullToRefresh: undefined,
+  sectionLists: undefined,
+  modals: undefined,
+  infiniteScroll: undefined
 }
 
 const StackNav = createStackNavigator<RootStackParams>();
@@ -27,6 +31,10 @@ const StackNavigation = () => {
       <StackNav.Screen name={"switch"} component={indexScreen.switch} />
       <StackNav.Screen name={"alert"} component={indexScreen.alerts} />
       <StackNav.Screen name={"inputText"} component={indexScreen.inputText} />
+      <StackNav.Screen name={"pullToRefresh"} component={indexScreen.pullToRefresh} />
+      <StackNav.Screen name={"sectionLists"} component={indexScreen.sectionLists} />
+      <StackNav.Screen name={"modals"} component={indexScreen.modal} />
+      <StackNav.Screen name={"infiniteScroll"} component={indexScreen.infiniteScroll} />
     </StackNav.Navigator>
   );
 };
