@@ -13,7 +13,8 @@ export type RootStackParams = {
   pullToRefresh: undefined,
   sectionLists: undefined,
   modals: undefined,
-  infiniteScroll: undefined
+  infiniteScroll: undefined,
+  slide: undefined
 }
 
 const StackNav = createStackNavigator<RootStackParams>();
@@ -35,6 +36,7 @@ const StackNavigation = () => {
       <StackNav.Screen name={"sectionLists"} component={indexScreen.sectionLists} />
       <StackNav.Screen name={"modals"} component={indexScreen.modal} />
       <StackNav.Screen name={"infiniteScroll"} component={indexScreen.infiniteScroll} />
+      <StackNav.Screen name={"slide"} component={indexScreen.slide} />
     </StackNav.Navigator>
   );
 };

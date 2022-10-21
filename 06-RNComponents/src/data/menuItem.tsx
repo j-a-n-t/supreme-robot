@@ -10,6 +10,7 @@ const menuItems: MenuItem[] = [
   { id: 7, title: "Section List", icon: "list", component: "sectionLists" },
   { id: 8, title: "Modal", icon: "browsers", component: "modals" },
   { id: 9, title: "infinite Scroll", icon: "code-download", component: "infiniteScroll" },
+  { id: 10, title: "Slide", icon: "book", component: "slide" },
 ];
 
 
