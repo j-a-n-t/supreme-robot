@@ -2,11 +2,11 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import { ListMenu } from "../interface/menuItem";
-import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { NavigationProp, useNavigation, useTheme } from "@react-navigation/native";
 
 
 const ListMenuItem = ({ menuItem: { title, icon, component } }: ListMenu) => {
-
+  const { colors } = useTheme();
   const navigation = useNavigation<NavigationProp<any>>();
 
   return (
@@ -15,7 +15,7 @@ const ListMenuItem = ({ menuItem: { title, icon, component } }: ListMenu) => {
       style={className.container}>
 
       <View style={className.itemTextContainer}>
-        <Text style={className.itemText}>{title}</Text>
+        <Text style={{ ...className.itemText, color: colors.text }}>{title}</Text>
         {icon && <Icon name={icon} size={25} color={"#5856D6"} style={{ marginHorizontal: 5 }} />}
       </View>
 

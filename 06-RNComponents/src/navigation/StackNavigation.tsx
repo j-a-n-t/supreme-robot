@@ -1,5 +1,4 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen } from "../screen/HomeScreen";
 import indexScreen from "../screen/indexScreen";
 
 
@@ -23,7 +22,6 @@ const StackNavigation = () => {
   return (
     <StackNav.Navigator screenOptions={{
       headerStyle: { elevation: 0 },
-      cardStyle: { backgroundColor: "white" },
       headerShown: false,
     }}>
       <StackNav.Screen name={"home"} component={indexScreen.home} />
