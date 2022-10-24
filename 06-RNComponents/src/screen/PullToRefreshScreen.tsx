@@ -1,9 +1,11 @@
 import { ScrollView, RefreshControl, View, Text } from "react-native";
 import { HeaderTitle } from "../components/HeaderTitle";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../context/themeContext";
 
 const PullToRefreshScreen = () => {
 
+  const {theme:{colors}} = useContext(ThemeContext);
   const [refreshing, setRefreshing] = useState<boolean>(false);
   const [data, setData] = useState<string>();
 
@@ -13,7 +15,7 @@ const PullToRefreshScreen = () => {
     setTimeout(() => {
       console.log("terminamos");
       setRefreshing(false);
-      setData("Hola mundo");
+      setData("Refresh ok");
     }, 3500);
   };
 
@@ -31,7 +33,7 @@ const PullToRefreshScreen = () => {
       <View>
         <HeaderTitle title={"Pull to Refresh"} />
         {
-          data && <Text style={{ fontSize: 40, fontWeight: "bold" }}>{data}</Text>
+          data && <Text style={{ fontSize: 40, fontWeight: "bold",color:colors.text }}>{data}</Text>
         }
       </View>
 

@@ -2,14 +2,15 @@ import { SectionList, Text, View } from "react-native";
 import { HeaderTitle } from "../components/HeaderTitle";
 import { Casas, casas } from "../data/Heros";
 import { ItemSeparator } from "../components/ItemSeparator";
+import { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
 
 const SectionListScreen = () => {
-
+  const { theme: { colors } } = useContext(ThemeContext);
   const RenderItem = (item: string) => {
-
     return (
       <View>
-        <Text>{item}</Text>
+        <Text style={{color:colors.text}}>{item}</Text>
       </View>
     );
   };

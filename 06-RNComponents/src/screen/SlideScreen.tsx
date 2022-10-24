@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Dimensions, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Animated } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -7,11 +7,13 @@ import { HeaderTitle } from "../components/HeaderTitle";
 import { itemsSlide, Slide } from "../data/Slide";
 import { StackScreenProps } from "@react-navigation/stack";
 import { useAnimation } from "../hooks/useAnimation";
+import { ThemeContext } from "../context/themeContext";
 
 interface Props extends StackScreenProps<any, any> {
 }
 
 const SlideScreen = ({ navigation }: Props) => {
+  const { theme: { colors } } = useContext(ThemeContext);
   const [ActiveIndex, setActiveIndex] = useState<number>(0);
   const { width, height } = Dimensions.get("window");
   const { opacity, fadeIn } = useAnimation();
@@ -19,7 +21,7 @@ const SlideScreen = ({ navigation }: Props) => {
 
   const renderItem = (item: Slide) => {
     return (
-      <View style={className.containerSlider}>
+      <View style={{ ...className.containerSlider,backgroundColor:colors.background }}>
         <Image
           source={item.img}
           style={{
@@ -28,8 +30,8 @@ const SlideScreen = ({ navigation }: Props) => {
             resizeMode: "center",
           }}
         />
-        <Text style={className.titleSlide}>{item.title}</Text>
-        <Text style={className.titleDesc}>{item.desc}</Text>
+        <Text style={{ ...className.titleSlide, color: colors.primary }}>{item.title}</Text>
+        <Text style={{ ...className.titleDesc, color: colors.text }}>{item.desc}</Text>
       </View>
     );
   };
@@ -63,7 +65,7 @@ const SlideScreen = ({ navigation }: Props) => {
             dotStyle={{
               width: 25,
               borderRadius: 10,
-              backgroundColor: "#5856D6",
+              backgroundColor: colors.primary,
             }} />
 
           {isVisible.current &&
@@ -73,7 +75,7 @@ const SlideScreen = ({ navigation }: Props) => {
               }}
               style={{
                 flexDirection: "row",
-                backgroundColor: "#5856D6",
+                backgroundColor: colors.primary,
                 width: 85,
                 height: 40,
                 alignItems: "center",
@@ -99,7 +101,6 @@ const className = StyleSheet.create({
   },
   containerSlider: {
     flex: 1,
-    backgroundColor: "white",
     borderRadius: 10,
     padding: 40,
     justifyContent: "center",

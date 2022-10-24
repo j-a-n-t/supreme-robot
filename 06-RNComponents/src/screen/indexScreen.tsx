@@ -9,6 +9,7 @@ import { SectionListScreen } from "./SectionListScreen";
 import { ModalScreen } from "./ModalScreen";
 import { InfiniteScrollScreen } from "./InfiniteScrollScreen";
 import { SlideScreen } from "./SlideScreen";
+import { ChangeThemeScreen } from "./ChangeThemeScreen";
 
 const indexScreen = {
   home: HomeScreen,
@@ -22,6 +23,7 @@ const indexScreen = {
   modal: ModalScreen,
   infiniteScroll: InfiniteScrollScreen,
   slide: SlideScreen,
+  theme:ChangeThemeScreen
 };
 
 export default indexScreen;

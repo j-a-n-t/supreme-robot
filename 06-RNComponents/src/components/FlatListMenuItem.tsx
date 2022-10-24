@@ -3,10 +3,12 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 import { ListMenu } from "../interface/menuItem";
 import { NavigationProp, useNavigation, useTheme } from "@react-navigation/native";
+import { useContext } from "react";
+import { ThemeContext } from "../context/themeContext";
 
 
 const ListMenuItem = ({ menuItem: { title, icon, component } }: ListMenu) => {
-  const { colors } = useTheme();
+  const { theme:{colors} } = useContext(ThemeContext);
   const navigation = useNavigation<NavigationProp<any>>();
 
   return (
@@ -16,10 +18,10 @@ const ListMenuItem = ({ menuItem: { title, icon, component } }: ListMenu) => {
 
       <View style={className.itemTextContainer}>
         <Text style={{ ...className.itemText, color: colors.text }}>{title}</Text>
-        {icon && <Icon name={icon} size={25} color={"#5856D6"} style={{ marginHorizontal: 5 }} />}
+        {icon && <Icon name={icon} size={25} color={colors.primary} style={{ marginHorizontal: 5 }} />}
       </View>
 
-      <Icon name={"chevron-forward"} size={25} color={"#5856D6"} style={{ marginHorizontal: 5 }} />
+      <Icon name={"chevron-forward"} size={25} color={colors.primary} style={{ marginHorizontal: 5 }} />
 
     </TouchableOpacity>
   );

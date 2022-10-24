@@ -1,10 +1,10 @@
-import { Animated, Button, StyleSheet, Text, View } from "react-native";
-import { useRef } from "react";
+import { Animated, Button, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useContext, useRef } from "react";
 import { useAnimation } from "../hooks/useAnimation";
+import { ThemeContext } from "../context/themeContext";
 
 
 const AnimationScreen101 = () => {
-
   const { fadeIn, fadeOut, startMovingPosition, opacity, position } = useAnimation();
 
   return (
@@ -17,11 +17,14 @@ const AnimationScreen101 = () => {
       }} />
 
       <View style={{ flexDirection: "row" }}>
+
         <Button title={"fadein"} onPress={() => {
           fadeIn();
           startMovingPosition(-100);
         }} />
-        <Button title={"fadeout"} onPress={fadeOut} />
+
+        <Button onPress={fadeOut} title={"fadeout"} />
+
       </View>
     </View>
   );

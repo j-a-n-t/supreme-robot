@@ -11,6 +11,7 @@ const menuItems: MenuItem[] = [
   { id: 8, title: "Modal", icon: "browsers", component: "modals" },
   { id: 9, title: "infinite Scroll", icon: "code-download", component: "infiniteScroll" },
   { id: 10, title: "Slide", icon: "book", component: "slide" },
+  { id: 11, title: "Theme", icon: "cloudy-night", component: "changeTheme" },
 ];
 
 

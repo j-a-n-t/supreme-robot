@@ -10,12 +10,13 @@ import {
   Keyboard,
   Switch,
 } from "react-native";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "../hooks/useForm";
 import { HeaderTitle } from "../components/HeaderTitle";
+import { ThemeContext } from "../context/themeContext";
 
 const InputTextScreen = () => {
-
+  const { theme: { colors } } = useContext(ThemeContext);
   const { form, onChange, nombre, telefono, email, isSubscribed } = useForm({
     nombre: "",
     telefono: "",
@@ -31,7 +32,8 @@ const InputTextScreen = () => {
             <HeaderTitle title={"Input Text"} />
 
             <TextInput
-              style={className.input}
+              style={{ ...className.input, borderColor: colors.border, color: colors.text }}
+              placeholderTextColor={colors.text}
               placeholder={"Ingresa nombre"}
               value={nombre}
               keyboardType={"default"}
@@ -42,7 +44,8 @@ const InputTextScreen = () => {
             />
 
             <TextInput
-              style={className.input}
+              style={{ ...className.input, borderColor: colors.border, color: colors.text }}
+              placeholderTextColor={colors.text}
               placeholder={"Ingresa email"}
               value={email}
               keyboardType={"email-address"}
@@ -51,8 +54,9 @@ const InputTextScreen = () => {
             />
 
             <TextInput
-              style={{ ...className.input }}
+              style={{ ...className.input, borderColor: colors.border, color: colors.text }}
               placeholder={"Ingresa telefono"}
+              placeholderTextColor={colors.text}
               value={telefono}
               keyboardType={"numeric"}
               autoCapitalize={"none"}
@@ -65,16 +69,16 @@ const InputTextScreen = () => {
               flexDirection: "row",
               justifyContent: "space-between",
             }}>
-              <Text>{!isSubscribed ? "No Suscrito" : "Suscrito"}</Text>
+              <Text style={{ color: colors.text }}>{!isSubscribed ? "No Suscrito" : "Suscrito"}</Text>
               <Switch
                 trackColor={{ false: "#D9D9DB", true: "#7070de" }}
                 thumbColor={(Platform.OS === "android") ? "#5856D6" : " "}
-                onValueChange={ () => onChange(!isSubscribed, "isSubscribed")}
+                onValueChange={() => onChange(!isSubscribed, "isSubscribed")}
                 value={isSubscribed}
               />
             </View>
 
-            <Text style={className.textInput}>{JSON.stringify(form, null, 5)}
+            <Text style={{ ...className.textInput, color: colors.text }}>{JSON.stringify(form, null, 5)}
             </Text>
           </View>
         </TouchableWithoutFeedback>
@@ -92,7 +96,6 @@ const className = StyleSheet.create({
     height: 40,
     borderRadius: 10,
     paddingHorizontal: 5,
-    borderColor: "rgba(0,0,0,0.3)",
   },
   textInput: {
     fontSize: 25,
