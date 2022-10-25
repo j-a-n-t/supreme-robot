@@ -50,4 +50,4 @@ const themeReducer = (state: ThemeState, action: ThemeAction): ThemeState => {
   }
 };
 
-export { themeReducer, lightTheme };
+export { themeReducer, lightTheme,darkTheme };
