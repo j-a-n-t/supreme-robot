@@ -1,4 +1,5 @@
 export type StackNavProps =
   {
-    'HomeScreen':undefined
+    "HomeScreen": undefined,
+    "PokemonScreen": undefined
   }

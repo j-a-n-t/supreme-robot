@@ -12,8 +12,16 @@ const StackNavigation = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <NavigationContainer theme={theme}>
-      <StackNav.Navigator screenOptions={{ headerStyle: { elevation: 0 }, headerShown: false }}>
+      <StackNav.Navigator
+        screenOptions={
+          {
+            headerStyle: { elevation: 0 },
+            headerShown: false,
+            cardStyle: { backgroundColor: "white" },
+          }}
+      >
         <StackNav.Screen name={"HomeScreen"} component={IndexScreen.Home} />
+        <StackNav.Screen name={"PokemonScreen"} component={IndexScreen.Pokemon} />
       </StackNav.Navigator>
     </NavigationContainer>
   );
