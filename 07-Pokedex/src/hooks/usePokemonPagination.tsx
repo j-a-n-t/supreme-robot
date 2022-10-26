@@ -9,16 +9,11 @@ const usePokemonPagination = () => {
   const nextUrl = useRef("https://pokeapi.co/api/v2/pokemon?limit=20");
 
   const loadPokemons = async () => {
-    try {
-      setIsloading(true);
-      const { data, data: { results } } = await PokemonAPI.get<PokemonPaginationResp>(nextUrl.current);
-      nextUrl.current = data.next;
+    setIsloading(true);
+    const { data, data: { results } } = await PokemonAPI.get<PokemonPaginationResp>(nextUrl.current);
+    nextUrl.current = data.next;
 
-      mapPokemonListToSimplePokemon(results);
-
-    } catch (e) {
-      console.log(e);
-    }
+    mapPokemonListToSimplePokemon(results);
   };
 
 
