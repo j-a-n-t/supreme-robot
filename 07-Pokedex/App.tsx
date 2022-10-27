@@ -1,10 +1,10 @@
-import StackNavigation from "./src/navigation/StackNavigation";
-import {  ThemeProvider } from "./src/context/themeContext";
+import { ThemeProvider } from "./src/context/themeContext";
+import TabsNavigation from "./src/navigation/TabsNavigation";
 
 const App = () => {
   return (
     <ThemeProvider>
-      <StackNavigation />
+      <TabsNavigation />
     </ThemeProvider>
   );
 };
