@@ -60,7 +60,7 @@ const PokemonScreen = ({ route, navigation }: PokemonDetails) => {
 
         {isLoading
           ? <ActivityIndicator size={50} color={colors.primary} />
-          : <PokemonData />
+          : <PokemonData pokemon={pokemonFull} />
         }
 
 

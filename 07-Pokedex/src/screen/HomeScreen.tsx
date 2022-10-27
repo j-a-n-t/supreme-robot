@@ -24,8 +24,8 @@ const HomeScreen = () => {
 
       <View style={{ alignItems: "center" }}>
         <FlatList
-          keyExtractor={pokemon => pokemon.id + pokemon.name}
           data={simplePokemon}
+          keyExtractor={pokemon => pokemon.id + pokemon.name}
           renderItem={({ item: pokemon }) => <PokemonCard pokemon={pokemon} />}
           showsVerticalScrollIndicator={false}
           numColumns={2}

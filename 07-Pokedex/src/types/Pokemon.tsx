@@ -25,6 +25,10 @@ export interface PokemonProps {
   pokemon: SimplePokemon;
 }
 
+export interface PokemonDataProps {
+  pokemon: PoKemonFull;
+}
+
 export interface PokemonDetails extends StackScreenProps<StackNavProps, "PokemonScreen"> {
 }
 
