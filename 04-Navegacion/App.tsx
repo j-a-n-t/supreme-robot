@@ -17,7 +17,6 @@ const App = () => {
     const changeFavoriteIcon = (iconName: string) => dispatch({type: 'newIcon', payload: iconName});
     const changeName = (name: string) => dispatch({type: 'newPerson', payload: name});
 
-
     return (
         <NavigationContainer>
             <AuthContext.Provider value={{authState, singIn, changeFavoriteIcon, logout, changeName}}>
